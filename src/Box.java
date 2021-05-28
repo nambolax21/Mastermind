@@ -2,9 +2,9 @@ import doodlepad.*;
 import java.util.ArrayList;
 
 public class Box {
-	//yellow Oval 
+	//position of the shape
 	public static  Point shppos;
-	//public static  Oval yellow;
+	//position of the 
 	static Oval[] checkColors = new Oval[4];
 	static String[] strColors = new String[4]; 
 	static String[] checkArr = new String[4];
@@ -20,6 +20,7 @@ public class Box {
 	public static Oval pink;
 	public static Oval orange;
 	
+	//method that is the snap back button 
 	public static void onRelease(Shape shp, double x, double y, int button) {
 		shppos = shp.getLocation();
 		//z is the y-coordinate of the original position of the oval so it will come back to that position
@@ -80,7 +81,7 @@ public class Box {
 					
 				}
 			}			
-		
+		//shifts the color into a string
 		for(int i = 0; i < 4; i++) {
 	    	if (guess.get(guess.size() - 4 - (4*c1.getT()) + i).getFillColor().equals(green.getFillColor())) {
 	    		strColors[i] = "G";
@@ -102,7 +103,7 @@ public class Box {
 	    	}
 		}
 		//colorToString();
-		
+		//prints guesses
 		for(int i = 0; i < 4; i++) {
 			System.out.println(strColors[i]);
 			//System.out.println(checkArr[i]);
@@ -239,6 +240,7 @@ public class Box {
 		orange.setFillColor(255, 118, 0);
 		colors.add(orange);
 		
+		//makes them draggable
 		for(Oval oval: colors) {
 			//makes them dragable
 			oval.setDraggable(true);
@@ -299,11 +301,14 @@ public class Box {
 			//System.out.println(checkArr[i]);
 		}
 		Board b1 = new Board();
+		//sets answer
 		b1.pickColorsFrom();
 		String[] colors1 = b1.setColors();
+		//prints out the answer
 		for(int i = 0; i < 4; i++) {
 			System.out.println(colors1[i]);
 		}
+		//initalizing c1 - constructor
 		c1 = new Check(strColors, colors1, pins);
 		
 		

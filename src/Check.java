@@ -5,17 +5,25 @@ import doodlepad.*;
 public class Check extends Rectangle {
 	//counts turns
 	private int t = 0;
+	
+	//creates a board class
 	Board b1 = new Board();
 	
-	
+	//string[] of color guesses
 	private String[] strColors;
+	//actual colors
 	private String[] actColors;
+	//number of red and black pins in an array
 	private int[] pins;
+	
+	//all ovals that are pin ovals
 	static ArrayList<Oval> pinOvals = new ArrayList<Oval>(); 
 	
-
+	//check constructor
     public Check(String[] strColors, String[] colors, ArrayList<Oval> pinOvals) {
+    	//sends stuff to parent rectangle class
         super(350, 500, 100, 20);
+        //
         this.setFillColor(0, 0, 0, 25);
         this.strColors = strColors;
         actColors = colors;
