@@ -30,7 +30,11 @@ public class Check extends Rectangle {
         //writes Check in the box  - button like
         new Text("Check!", 380, 505);
         //instructions about pins
-        new Text("Black pins are color, red pins are position and color", 340, 530);
+        new Text("Reminder: Black pins are color, red pins are position and color", 100, 600);
+        new Text("RULES- There are four colors in four positions that you have to guess.", 100, 615);
+        new Text("You will be prompted for a color guess in each position and you will enter your guess in a single, uppercase letter.", 100, 630);
+        new Text("You will be given back the number of red pins and white pins which corresponds to the correct position and color and the color but incorrect position, respectively.", 100, 645);
+        new Text("Then you will be able to guess again. There can't be more than one of the same color.", 100, 660);
         pins = new int[2];
         this.pinOvals = pinOvals; 
         //the actual check part of the button
